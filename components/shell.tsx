@@ -72,13 +72,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <span className="text-[19px] font-bold">{product.name}</span>
           <span
             className="rounded font-mono text-[10px] font-semibold"
-            style={{
-              color: COLORS.bg,
-              background: product.id === "fieldmate" ? COLORS.warn : COLORS.healthy,
-              padding: "2px 7px",
-            }}
+            style={{ color: COLORS.bg, background: COLORS.healthy, padding: "2px 7px" }}
           >
-            {product.id === "fieldmate" ? "LIVE AI" : "DEMO"}
+            DEMO
           </span>
         </div>
         <div className="px-[22px] pt-4 pb-6">{children}</div>

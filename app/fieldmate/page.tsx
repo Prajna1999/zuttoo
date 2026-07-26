@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { COLORS } from "@/lib/design-system";
-import { SITE_TELEMETRY, FM_SUGGESTIONS } from "@/lib/fieldmate-data";
+import { SITE_TELEMETRY, FM_SUGGESTIONS, simulateFieldMateReply } from "@/lib/fieldmate-data";
 import { SectionFooter } from "@/components/section-footer";
 
 type Message = { role: "user" | "assistant"; content: string };
@@ -22,23 +22,12 @@ export default function FieldMateDemo() {
     const q = (text ?? input).trim();
     if (!q || busy) return;
     setInput("");
-    const next: Message[] = [...messages, { role: "user", content: q }];
-    setMessages(next);
+    setMessages((m) => [...m, { role: "user", content: q }]);
     setBusy(true);
-    try {
-      const r = await fetch("/api/fieldmate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next }),
-      });
-      const data = await r.json();
-      const reply = (data.content || []).filter((b: { type: string }) => b.type === "text").map((b: { text: string }) => b.text).join("\n").trim();
-      setMessages((m) => [...m, { role: "assistant", content: reply || data.error || "No response — retry." }]);
-    } catch {
-      setMessages((m) => [...m, { role: "assistant", content: "Connection issue. Check network." }]);
-    } finally {
-      setBusy(false);
-    }
+    // Simulated copilot: canned, telemetry-grounded replies — no live model call.
+    await new Promise((res) => setTimeout(res, 500 + Math.random() * 400));
+    setMessages((m) => [...m, { role: "assistant", content: simulateFieldMateReply(q) }]);
+    setBusy(false);
   }
 
   return (
