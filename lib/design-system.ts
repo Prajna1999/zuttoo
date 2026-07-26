@@ -21,7 +21,6 @@ export const PRODUCTS = [
   { id: "gridsense", name: "GridSense", sub: "AMI Intelligence", icon: "⚡" },
   { id: "solariq", name: "SolarIQ", sub: "Solar Performance AI", icon: "☀" },
   { id: "windiq", name: "WindIQ", sub: "Wind Performance AI", icon: "💨" },
-  { id: "fieldmate", name: "FieldMate", sub: "Field Copilot (AI)", icon: "🔧" },
 ] as const;
 
 export const TOOLTIP_STYLE = {

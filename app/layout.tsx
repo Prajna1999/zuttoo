@@ -12,7 +12,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Zuttoo Product Suite",
-  description: "AssetIQ, GridSense, SolarIQ, FieldMate — Zuttoo demo suite",
+  description: "AssetIQ, GridSense, SolarIQ, WindIQ — Zuttoo demo suite, with FieldMate copilot",
 };
 
 export default function RootLayout({

@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COLORS, PRODUCTS } from "@/lib/design-system";
+import { FieldMatePanel } from "@/components/fieldmate-panel";
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [navOpen, setNavOpen] = useState(true);
+  const [copilotOpen, setCopilotOpen] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem("fieldmate-seen")) return;
+    localStorage.setItem("fieldmate-seen", "1");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time read of external storage on mount
+    setCopilotOpen(true);
+  }, []);
   const pathname = usePathname();
   const activeId = pathname.split("/")[1] || "assetiq";
   const product = PRODUCTS.find((p) => p.id === activeId) ?? PRODUCTS[0];
@@ -68,17 +76,28 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </nav>
 
       <main className="min-w-0 flex-1 overflow-auto">
-        <div className="flex flex-wrap items-baseline gap-2.5 border-b border-line px-[22px] pt-4 pb-2">
-          <span className="text-[19px] font-bold">{product.name}</span>
-          <span
-            className="rounded font-mono text-[10px] font-semibold"
-            style={{ color: COLORS.bg, background: COLORS.healthy, padding: "2px 7px" }}
+        <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-line px-[22px] pt-4 pb-2">
+          <div className="flex flex-wrap items-baseline gap-2.5">
+            <span className="text-[19px] font-bold">{product.name}</span>
+            <span
+              className="rounded font-mono text-[10px] font-semibold"
+              style={{ color: COLORS.bg, background: COLORS.healthy, padding: "2px 7px" }}
+            >
+              DEMO
+            </span>
+          </div>
+          <button
+            onClick={() => setCopilotOpen(true)}
+            className="flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 font-mono text-[11px]"
+            style={{ borderColor: COLORS.line, color: COLORS.dim }}
           >
-            DEMO
-          </span>
+            <span>🔧</span> Ask FieldMate
+          </button>
         </div>
         <div className="px-[22px] pt-4 pb-6">{children}</div>
       </main>
+
+      <FieldMatePanel open={copilotOpen} onClose={() => setCopilotOpen(false)} productId={product.id} />
     </div>
   );
 }
