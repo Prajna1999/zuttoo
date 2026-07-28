@@ -10,12 +10,12 @@ export function KPICard({
   color: string;
 }) {
   return (
-    <div className="rounded-[10px] border border-line bg-panel px-3.5 py-3">
+    <div className="min-w-0 rounded-[10px] border border-line bg-panel px-3.5 py-3">
       <div className="text-[10px] font-semibold tracking-[0.08em] text-dim">
         {label}
       </div>
       <div
-        className="mt-1 font-mono text-2xl font-semibold"
+        className="mt-1 break-words font-mono text-xl font-semibold sm:text-2xl"
         style={{ color }}
       >
         {value}

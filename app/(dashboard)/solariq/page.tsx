@@ -62,7 +62,7 @@ export default function SolarIQDemo() {
         <KPICard label="FAULT STRINGS" value="6 / 180" sub="2 clusters + 1 dead" color={COLORS.crit} />
       </div>
 
-      <div className="mb-3.5 grid grid-cols-[minmax(0,3fr)_minmax(250px,1fr)] gap-3.5">
+      <div className="mb-3.5 grid grid-cols-1 gap-3.5 xl:grid-cols-[minmax(0,3fr)_minmax(250px,1fr)]">
         <div className="min-w-0 rounded-[10px] border border-line bg-panel p-4">
           <div className="mb-2.5 flex flex-wrap items-baseline justify-between gap-1.5">
             <span className="text-[11px] font-semibold tracking-[0.08em] text-dim">STRING PR — INVERTERS × STRINGS · click row for diagnosis</span>
@@ -114,7 +114,7 @@ export default function SolarIQDemo() {
         </div>
       </div>
 
-      <div className="grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-3.5">
+      <div className="grid grid-cols-1 gap-3.5 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <div className="min-w-0 rounded-[10px] border border-line bg-panel p-4">
           <div className="mb-2.5 text-[11px] font-semibold tracking-[0.08em] text-dim">GENERATION vs SCHEDULE (MW) · DSM ±10% BAND</div>
           <ResponsiveContainer width="100%" height={210}>

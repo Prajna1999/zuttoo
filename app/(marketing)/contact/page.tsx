@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Talk to Zuttoo about a walkthrough, a pilot on your own data, or pricing — on WhatsApp or at sales@zuttoo.in.",
+  alternates: { canonical: "/contact" },
+};
 
 const WHATSAPP_NUMBER = "+91 97830 25207";
 const WHATSAPP_URL = "https://wa.me/919783025207";

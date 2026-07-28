@@ -59,7 +59,7 @@ export default function GridSenseDemo() {
         <KPICard label="FORECAST MAPE" value="2.8%" sub="last 30 days" color={COLORS.trace} />
       </div>
 
-      <div className="mb-3.5 grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3.5">
+      <div className="mb-3.5 grid grid-cols-1 gap-3.5 xl:grid-cols-2">
         <div className="min-w-0 rounded-[10px] border border-line bg-panel p-4">
           <div className="mb-2.5 text-[11px] font-semibold tracking-[0.08em] text-dim">FEEDER ENERGY ACCOUNTING — INPUT vs BILLED (MWh, 30d)</div>
           <ResponsiveContainer width="100%" height={210}>

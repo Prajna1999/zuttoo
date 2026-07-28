@@ -47,12 +47,17 @@ export function FieldMatePanel({
   }
 
   return (
-    <aside
-      className="sticky top-0 flex h-screen flex-shrink-0 flex-col overflow-hidden border-l border-line bg-panel transition-[width] duration-200 ease-out"
-      style={{ width: open ? 380 : 0 }}
-      aria-hidden={!open}
-    >
-      <div className="flex h-screen w-[380px] flex-col">
+    <>
+      {open && <div className="fixed inset-0 z-30 bg-black/40 lg:hidden" onClick={onClose} />}
+      <aside
+        className={`z-40 flex flex-col overflow-hidden border-l border-line bg-panel ease-out
+          max-lg:fixed max-lg:inset-y-0 max-lg:right-0 max-lg:w-[min(380px,88vw)] max-lg:shadow-2xl max-lg:transition-transform max-lg:duration-200
+          ${open ? "max-lg:translate-x-0" : "max-lg:translate-x-full"}
+          lg:sticky lg:top-0 lg:h-screen lg:flex-shrink-0 lg:transition-[width] lg:duration-200
+          ${open ? "lg:w-[380px]" : "lg:w-0"}`}
+        aria-hidden={!open}
+      >
+        <div className="flex h-screen w-[min(380px,88vw)] flex-col lg:w-[380px]">
         <div className="flex items-center justify-between border-b border-line px-4 py-3.5">
           <div className="flex items-center gap-2.5">
             <span className="text-base">🔧</span>
@@ -136,7 +141,8 @@ export function FieldMatePanel({
             SEND
           </button>
         </div>
-      </div>
-    </aside>
+        </div>
+      </aside>
+    </>
   );
 }

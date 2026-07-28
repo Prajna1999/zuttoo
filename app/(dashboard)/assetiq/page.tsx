@@ -165,7 +165,7 @@ export default function AssetIQPage() {
         <FailureHorizon assets={ASSETS} selected={selectedId} onSelect={setSelectedId} />
       </div>
 
-      <div className="grid grid-cols-[minmax(0,2fr)_minmax(260px,1fr)] gap-3.5">
+      <div className="grid grid-cols-1 gap-3.5 xl:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)]">
         <div className="min-w-0 rounded-[10px] border border-line bg-panel p-4">
           <div className="mb-1 flex flex-wrap items-baseline justify-between gap-1">
             <div>
@@ -194,7 +194,7 @@ export default function AssetIQPage() {
             <div className="mb-2 text-[11px] font-semibold tracking-[0.08em] text-dim">TOP CONTRIBUTING SIGNALS</div>
             {asset.drivers.map((d) => (
               <div key={d.f} className="mb-1.5 flex items-center gap-2.5">
-                <span className="w-[220px] flex-shrink-0 text-xs">{d.f}</span>
+                <span className="w-32 flex-shrink-0 text-xs sm:w-[220px]">{d.f}</span>
                 <div className="h-1.5 flex-1 rounded-sm bg-bg">
                   <div className="h-full rounded-sm opacity-85" style={{ width: `${d.w * 100}%`, background: meta.color }} />
                 </div>

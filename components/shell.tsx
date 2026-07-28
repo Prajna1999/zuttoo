@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COLORS, PRODUCTS } from "@/lib/design-system";
@@ -8,7 +8,13 @@ import { FieldMatePanel } from "@/components/fieldmate-panel";
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [navOpen, setNavOpen] = useState(true);
-  const [copilotOpen, setCopilotOpen] = useState(true);
+  const [copilotOpen, setCopilotOpen] = useState(false);
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)").matches;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time viewport read on mount
+    setCopilotOpen(desktop);
+    if (!window.matchMedia("(min-width: 768px)").matches) setNavOpen(false);
+  }, []);
   const pathname = usePathname();
   const activeId = pathname.split("/")[1];
   const product = PRODUCTS.find((p) => p.id === activeId);

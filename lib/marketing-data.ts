@@ -2,6 +2,12 @@ import type { PRODUCTS } from "@/lib/design-system";
 
 type ProductId = (typeof PRODUCTS)[number]["id"];
 
+export const SITE_URL = "https://zuttoo.in";
+export const SITE_NAME = "Zuttoo";
+export const SITE_TAGLINE = "AI products for electricity operators";
+export const SITE_DESCRIPTION =
+  "Zuttoo builds AI for electricity operators — predictive maintenance, smart-meter (AMI) intelligence, and solar & wind performance analytics — on the data your infrastructure already produces.";
+
 export const MARKETING_COPY: Record<ProductId, { tagline: string; blurb: string; features: string[] }> = {
   assetiq: {
     tagline: "Know a failure is coming, weeks before it happens.",

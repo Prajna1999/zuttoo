@@ -1,7 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PRODUCTS } from "@/lib/design-system";
-import { MARKETING_COPY } from "@/lib/marketing-data";
+import { MARKETING_COPY, SITE_URL } from "@/lib/marketing-data";
 import { ProductIconTile, PRODUCT_HUES } from "@/components/marketing/product-icons";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const ORG_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Zuttoo Technologies Private Limited",
+  url: SITE_URL,
+  email: "sales@zuttoo.in",
+  telephone: "+91-9783025207",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3rd Floor, Orchid Centre, Nr. IILM Institute, Sector 53, DLF QE",
+    addressLocality: "Gurgaon",
+    addressRegion: "Haryana",
+    postalCode: "122002",
+    addressCountry: "IN",
+  },
+};
 
 const HERO_ONELINERS: Record<(typeof PRODUCTS)[number]["id"], string> = {
   assetiq: "AI that predicts equipment failure weeks ahead",
@@ -28,6 +50,10 @@ const PLATFORM_POINTS = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD).replace(/</g, "\\u003c") }}
+      />
       <section className="mk-glow">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-14 md:pt-24">
           <div className="mk-rise inline-flex items-center gap-2 rounded-full border border-mk-border bg-mk-bg/70 px-3.5 py-1.5 text-xs font-medium text-mk-ink-dim">
@@ -35,13 +61,13 @@ export default function Home() {
             Four AI products · one platform
           </div>
           <h1
-            className="mk-rise mt-6 max-w-3xl font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl"
+            className="mk-rise mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
             style={{ animationDelay: "80ms" }}
           >
             AI products for electricity operators.
           </h1>
           <p
-            className="mk-rise mt-6 max-w-2xl text-lg leading-relaxed text-mk-ink-dim"
+            className="mk-rise mt-6 max-w-2xl text-base leading-relaxed text-mk-ink-dim sm:text-lg"
             style={{ animationDelay: "160ms" }}
           >
             Zuttoo builds AI that reads the data your infrastructure already produces — substation and plant telemetry,
