@@ -264,9 +264,9 @@ export function ConsoleScreenshot({ id }: { id: string }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-mk-border shadow-lg">
       <div className="flex items-center gap-2 border-b border-mk-border bg-mk-surface px-4 py-3">
-        <span className="h-2.5 w-2.5 flex-none rounded-full bg-mk-border" />
-        <span className="h-2.5 w-2.5 flex-none rounded-full bg-mk-border" />
-        <span className="h-2.5 w-2.5 flex-none rounded-full bg-mk-border" />
+        <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: "#ff5f57" }} />
+        <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: "#febc2e" }} />
+        <span className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: "#28c840" }} />
         <span className="ml-3 min-w-0 truncate rounded-md bg-mk-bg px-3 py-1 font-mono text-[10px] text-mk-ink-faint">
           app.zuttoo.io/{id}
         </span>
