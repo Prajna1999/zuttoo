@@ -16,9 +16,69 @@
   --color-nav-hover: #1e252d;
   --font-sans: var(--font-inter);
   --font-mono: var(--font-plex-mono);
+
+  /* Marketing-only palette (Home + /products/*) — separate namespace, and a
+     deliberately different look from the dark ops consoles: clean SaaS
+     neutrals, deep slate ink, one refined teal accent. Light default. */
+  --color-mk-bg: #ffffff;
+  --color-mk-surface: #f8fafc;
+  --color-mk-surface-soft: #f1f5f9;
+  --color-mk-border: #e6eaf0;
+  --color-mk-ink: #0f172a;
+  --color-mk-ink-dim: #475569;
+  --color-mk-ink-faint: #94a3b8;
+  --color-mk-accent: #0d9488;
+  --color-mk-accent-soft: #ccfbf1;
+  --font-display: var(--font-bricolage);
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+/* Marketing dark mode: deep navy-slate, intentionally not the console graphite. */
+[data-mk-theme="dark"] {
+  --color-mk-bg: #0b1120;
+  --color-mk-surface: #111a2e;
+  --color-mk-surface-soft: #16213a;
+  --color-mk-border: #223050;
+  --color-mk-ink: #e6ecf4;
+  --color-mk-ink-dim: #9aa8bd;
+  --color-mk-ink-faint: #64748b;
+  --color-mk-accent: #2dd4bf;
+  --color-mk-accent-soft: #12433d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Soft aurora wash behind the marketing hero. */
+.mk-glow {
+  background:
+    radial-gradient(600px 320px at 30% 0%, color-mix(in srgb, var(--color-mk-accent) 10%, transparent), transparent 70%),
+    radial-gradient(520px 300px at 75% 10%, color-mix(in srgb, #6366f1 7%, transparent), transparent 70%);
+}
+
+@keyframes mk-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mk-rise {
+  animation: mk-rise 0.7s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .mk-rise {
+    animation: none;
+  }
 }

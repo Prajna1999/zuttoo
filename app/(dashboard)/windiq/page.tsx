@@ -144,7 +144,7 @@ export default function WindIQDemo() {
           </ResponsiveContainer>
         </div>
       </div>
-      <SectionFooter text="Simulated data · WindIQ integrates via existing SCADA/OPC-UA — no turbine controller changes required" />
+      <SectionFooter text="Simulated data · WindIQ integrates with your existing plant data systems — no turbine controller changes required" />
     </>
   );
 }

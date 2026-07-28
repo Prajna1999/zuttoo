@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COLORS, PRODUCTS } from "@/lib/design-system";
@@ -8,16 +8,10 @@ import { FieldMatePanel } from "@/components/fieldmate-panel";
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [navOpen, setNavOpen] = useState(true);
-  const [copilotOpen, setCopilotOpen] = useState(false);
-  useEffect(() => {
-    if (localStorage.getItem("fieldmate-seen")) return;
-    localStorage.setItem("fieldmate-seen", "1");
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time read of external storage on mount
-    setCopilotOpen(true);
-  }, []);
+  const [copilotOpen, setCopilotOpen] = useState(true);
   const pathname = usePathname();
-  const activeId = pathname.split("/")[1] || "assetiq";
-  const product = PRODUCTS.find((p) => p.id === activeId) ?? PRODUCTS[0];
+  const activeId = pathname.split("/")[1];
+  const product = PRODUCTS.find((p) => p.id === activeId);
 
   return (
     <div className="flex min-h-screen bg-bg text-text">
@@ -29,9 +23,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
           className={`flex items-center justify-between ${navOpen ? "px-3.5 pt-4 pb-3" : "px-2.5 pt-4 pb-3"}`}
         >
           {navOpen && (
-            <span className="whitespace-nowrap font-mono text-[13px] font-bold tracking-[0.04em]">
+            <Link
+              href="/"
+              className="whitespace-nowrap font-mono text-[13px] font-bold tracking-[0.04em] hover:text-healthy"
+            >
               ZUTTOO
-            </span>
+            </Link>
           )}
           <button
             onClick={() => setNavOpen((v) => !v)}
@@ -76,28 +73,38 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </nav>
 
       <main className="min-w-0 flex-1 overflow-auto">
-        <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-line px-[22px] pt-4 pb-2">
-          <div className="flex flex-wrap items-baseline gap-2.5">
-            <span className="text-[19px] font-bold">{product.name}</span>
-            <span
-              className="rounded font-mono text-[10px] font-semibold"
-              style={{ color: COLORS.bg, background: COLORS.healthy, padding: "2px 7px" }}
+        {product && (
+          <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-line px-[22px] pt-4 pb-2">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <Link
+                href={`/products/${product.id}`}
+                className="rounded-md border border-line px-2.5 py-1 font-mono text-[11px] text-dim transition-colors hover:border-healthy hover:text-healthy"
+              >
+                ← BACK
+              </Link>
+              <span className="text-[19px] font-bold">{product.name}</span>
+              <span
+                className="rounded font-mono text-[10px] font-semibold"
+                style={{ color: COLORS.bg, background: COLORS.healthy, padding: "2px 7px" }}
+              >
+                DEMO
+              </span>
+            </div>
+            <button
+              onClick={() => setCopilotOpen(true)}
+              className="flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 font-mono text-[11px]"
+              style={{ borderColor: COLORS.line, color: COLORS.dim }}
             >
-              DEMO
-            </span>
+              <span>🔧</span> Ask FieldMate
+            </button>
           </div>
-          <button
-            onClick={() => setCopilotOpen(true)}
-            className="flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 font-mono text-[11px]"
-            style={{ borderColor: COLORS.line, color: COLORS.dim }}
-          >
-            <span>🔧</span> Ask FieldMate
-          </button>
-        </div>
+        )}
         <div className="px-[22px] pt-4 pb-6">{children}</div>
       </main>
 
-      <FieldMatePanel open={copilotOpen} onClose={() => setCopilotOpen(false)} productId={product.id} />
+      {product && (
+        <FieldMatePanel open={copilotOpen} onClose={() => setCopilotOpen(false)} productId={product.id} />
+      )}
     </div>
   );
 }

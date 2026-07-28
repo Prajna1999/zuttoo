@@ -148,7 +148,7 @@ export default function SolarIQDemo() {
           </ResponsiveContainer>
         </div>
       </div>
-      <SectionFooter text="Simulated data · SolarIQ integrates via existing SCADA through the protocol gateway" />
+      <SectionFooter text="Simulated data · SolarIQ integrates with your existing plant data systems through the protocol gateway" />
     </>
   );
 }
