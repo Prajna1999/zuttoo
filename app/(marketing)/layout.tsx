@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Bricolage_Grotesque } from "next/font/google";
 import { MarketingThemeProvider } from "@/components/marketing/theme-provider";
-import { ThemeToggle } from "@/components/marketing/theme-toggle";
 
 const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"] });
 
@@ -27,7 +26,6 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
               >
                 Contact
               </Link>
-              <ThemeToggle />
               <Link
                 href="/assetiq"
                 className="rounded-lg bg-mk-ink px-4 py-2 text-sm font-medium text-mk-bg shadow-sm transition-opacity hover:opacity-85"

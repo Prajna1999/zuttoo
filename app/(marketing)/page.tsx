@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PRODUCTS } from "@/lib/design-system";
 import { MARKETING_COPY, SITE_URL } from "@/lib/marketing-data";
 import { ProductIconTile, PRODUCT_HUES } from "@/components/marketing/product-icons";
+import { ConsoleScreenshot } from "@/components/marketing/console-screenshot";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -56,37 +57,47 @@ export default function Home() {
       />
       <section className="mk-glow">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-14 md:pt-24">
-          <div className="mk-rise inline-flex items-center gap-2 rounded-full border border-mk-border bg-mk-bg/70 px-3.5 py-1.5 text-xs font-medium text-mk-ink-dim">
-            <span className="h-1.5 w-1.5 rounded-full bg-mk-accent" />
-            Four AI products · one platform
-          </div>
-          <h1
-            className="mk-rise mt-6 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
-            style={{ animationDelay: "80ms" }}
-          >
-            AI products for electricity operators.
-          </h1>
-          <p
-            className="mk-rise mt-6 max-w-2xl text-base leading-relaxed text-mk-ink-dim sm:text-lg"
-            style={{ animationDelay: "160ms" }}
-          >
-            Zuttoo builds AI that reads the data your infrastructure already produces — substation and plant telemetry,
-            smart-meter readings from your Advanced Metering Infrastructure (AMI), inverter and turbine
-            feeds — and turns it into clear, costed actions for your teams.
-          </p>
-          <div className="mk-rise mt-8 flex flex-wrap items-center gap-3" style={{ animationDelay: "240ms" }}>
-            <a
-              href="#products"
-              className="rounded-lg bg-mk-ink px-5 py-3 text-sm font-medium text-mk-bg shadow-sm transition-opacity hover:opacity-85"
-            >
-              Explore the suite
-            </a>
-            <Link
-              href="/assetiq"
-              className="rounded-lg border border-mk-border bg-mk-bg px-5 py-3 text-sm font-medium text-mk-ink transition-colors hover:bg-mk-surface"
-            >
-              Open a live demo →
-            </Link>
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-14">
+            <div>
+              <div className="mk-rise inline-flex items-center gap-2 rounded-full border border-mk-border bg-mk-bg/70 px-3.5 py-1.5 text-xs font-medium text-mk-ink-dim">
+                <span className="h-1.5 w-1.5 rounded-full bg-mk-accent" />
+                Four AI products · one platform
+              </div>
+              <h1
+                className="mk-rise mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl"
+                style={{ animationDelay: "80ms" }}
+              >
+                AI products for electricity operators.
+              </h1>
+              <p
+                className="mk-rise mt-6 max-w-2xl text-base leading-relaxed text-mk-ink-dim sm:text-lg"
+                style={{ animationDelay: "160ms" }}
+              >
+                Zuttoo builds AI that reads the data your infrastructure already produces — substation and plant
+                telemetry, smart-meter readings from your Advanced Metering Infrastructure (AMI), inverter and
+                turbine feeds — and turns it into clear, costed actions for your teams.
+              </p>
+              <div className="mk-rise mt-8 flex flex-wrap items-center gap-3" style={{ animationDelay: "240ms" }}>
+                <a
+                  href="#products"
+                  className="rounded-lg bg-mk-ink px-5 py-3 text-sm font-medium text-mk-bg shadow-sm transition-opacity hover:opacity-85"
+                >
+                  Explore the suite
+                </a>
+                <Link
+                  href="/assetiq"
+                  className="rounded-lg border border-mk-border bg-mk-bg px-5 py-3 text-sm font-medium text-mk-ink transition-colors hover:bg-mk-surface"
+                >
+                  Open a live demo →
+                </Link>
+              </div>
+            </div>
+            <div className="mk-rise min-w-0" style={{ animationDelay: "200ms" }}>
+              <ConsoleScreenshot id="assetiq" />
+              <p className="mt-3 text-center text-xs text-mk-ink-faint">
+                AssetIQ console · live in this demo environment
+              </p>
+            </div>
           </div>
 
           <div
