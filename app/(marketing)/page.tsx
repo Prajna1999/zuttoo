@@ -67,15 +67,15 @@ export default function Home() {
                 className="mk-rise mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl"
                 style={{ animationDelay: "80ms" }}
               >
-                AI products for electricity operators.
+                AI products for real-world operations.
               </h1>
               <p
                 className="mk-rise mt-6 max-w-2xl text-base leading-relaxed text-mk-ink-dim sm:text-lg"
                 style={{ animationDelay: "160ms" }}
               >
-                Zuttoo builds AI that reads the data your infrastructure already produces — substation and plant
-                telemetry, smart-meter readings from your Advanced Metering Infrastructure (AMI), inverter and
-                turbine feeds — and turns it into clear, costed actions for your teams.
+                Zuttoo builds AI that reads the data your operations already produce — sensors, meters,
+                machines, and field systems — and turns it into clear, costed actions for your teams. No new
+                hardware, no rip-and-replace, whatever your industry.
               </p>
               <div className="mk-rise mt-8 flex flex-wrap items-center gap-3" style={{ animationDelay: "240ms" }}>
                 <a

@@ -40,7 +40,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-10">
             <div>
               <div className="font-display text-base font-bold tracking-tight">zuttoo</div>
-              <div className="mt-1 text-xs text-mk-ink-faint">AI products for electricity operators</div>
+              <div className="mt-1 text-xs text-mk-ink-faint">AI products for real-world operations</div>
               <div className="mt-1 max-w-xs text-xs text-mk-ink-faint">
                 3rd Floor, Orchid Centre, Sector 53, DLF QE, Gurgaon, Haryana 122002
               </div>

@@ -26,7 +26,7 @@ export default function OgImage() {
           <div style={{ fontSize: 28, color: "#9aa8bd", letterSpacing: 2 }}>ZUTTOO PRODUCT SUITE</div>
         </div>
         <div style={{ marginTop: 36, fontSize: 84, fontWeight: 700, lineHeight: 1.05, maxWidth: 900 }}>
-          AI products for electricity operators.
+          AI products for real-world operations.
         </div>
         <div style={{ marginTop: 40, display: "flex", gap: 28, fontSize: 30, color: "#9aa8bd" }}>
           <span>AssetIQ</span>

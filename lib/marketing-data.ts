@@ -4,9 +4,9 @@ type ProductId = (typeof PRODUCTS)[number]["id"];
 
 export const SITE_URL = "https://zuttoo.in";
 export const SITE_NAME = "Zuttoo";
-export const SITE_TAGLINE = "AI products for electricity operators";
+export const SITE_TAGLINE = "AI products for real-world operations";
 export const SITE_DESCRIPTION =
-  "Zuttoo builds AI for electricity operators — predictive maintenance, smart-meter (AMI) intelligence, and solar & wind performance analytics — on the data your infrastructure already produces.";
+  "Zuttoo builds AI that turns the data your operations already produce — sensors, meters, machines, field systems — into clear, costed actions for your teams, in any industry.";
 
 export const MARKETING_COPY: Record<ProductId, { tagline: string; blurb: string; features: string[] }> = {
   assetiq: {
