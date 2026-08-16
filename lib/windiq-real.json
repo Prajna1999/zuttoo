@@ -1,0 +1,339 @@
+{
+ "source": "Kelmarsh wind farm SCADA 2016 \u00b7 Cubico Sustainable Investments \u00b7 CC-BY-4.0 \u00b7 zenodo.org/records/5841834",
+ "farm": {
+  "name": "Kelmarsh Wind Farm",
+  "capacityMw": 12.3,
+  "turbineType": "Senvion MM92"
+ },
+ "windowDate": "2016-12-25",
+ "turbines": [
+  {
+   "id": "KWF-01",
+   "capacity": 2.05,
+   "conformance": 95.2,
+   "availability": 90.9,
+   "energyMwh": 4239.8,
+   "deficitMwh": 213.5,
+   "worstBand": "6\u20138 m/s",
+   "worstBandRatio": 93.7
+  },
+  {
+   "id": "KWF-02",
+   "capacity": 2.05,
+   "conformance": 103.8,
+   "availability": 95.0,
+   "energyMwh": 5004.5,
+   "deficitMwh": 0.0,
+   "worstBand": "10\u201312 m/s",
+   "worstBandRatio": 101.0
+  },
+  {
+   "id": "KWF-03",
+   "capacity": 2.05,
+   "conformance": 99.6,
+   "availability": 88.7,
+   "energyMwh": 4027.5,
+   "deficitMwh": 15.6,
+   "worstBand": "10\u201312 m/s",
+   "worstBandRatio": 92.2
+  },
+  {
+   "id": "KWF-04",
+   "capacity": 2.05,
+   "conformance": 104.4,
+   "availability": 91.5,
+   "energyMwh": 4297.9,
+   "deficitMwh": 0.0,
+   "worstBand": "6\u20138 m/s",
+   "worstBandRatio": 102.0
+  },
+  {
+   "id": "KWF-05",
+   "capacity": 2.05,
+   "conformance": 96.5,
+   "availability": 85.9,
+   "energyMwh": 3813.4,
+   "deficitMwh": 139.0,
+   "worstBand": "11\u201313 m/s",
+   "worstBandRatio": 78.2
+  },
+  {
+   "id": "KWF-06",
+   "capacity": 2.05,
+   "conformance": 100.6,
+   "availability": 74.2,
+   "energyMwh": 3317.8,
+   "deficitMwh": 0.0,
+   "worstBand": "4\u20136 m/s",
+   "worstBandRatio": 97.0
+  }
+ ],
+ "losses": [
+  {
+   "name": "Forced outage",
+   "mwh": 940
+  },
+  {
+   "name": "Scheduled Maintenance",
+   "mwh": 254
+  },
+  {
+   "name": "Requested Shutdown",
+   "mwh": 248
+  },
+  {
+   "name": "Out of Electrical Specification",
+   "mwh": 204
+  },
+  {
+   "name": "Uncategorised",
+   "mwh": 43
+  },
+  {
+   "name": "Technical Standby",
+   "mwh": 24
+  }
+ ],
+ "generation": [
+  {
+   "t": "00:10",
+   "actual": 11.68,
+   "pred": 10.5
+  },
+  {
+   "t": "00:40",
+   "actual": 11.91,
+   "pred": 10.65
+  },
+  {
+   "t": "01:10",
+   "actual": 11.75,
+   "pred": 10.54
+  },
+  {
+   "t": "01:40",
+   "actual": 11.48,
+   "pred": 10.29
+  },
+  {
+   "t": "02:10",
+   "actual": 11.98,
+   "pred": 10.7
+  },
+  {
+   "t": "02:40",
+   "actual": 11.39,
+   "pred": 10.51
+  },
+  {
+   "t": "03:10",
+   "actual": 11.46,
+   "pred": 10.39
+  },
+  {
+   "t": "03:40",
+   "actual": 11.73,
+   "pred": 10.51
+  },
+  {
+   "t": "04:10",
+   "actual": 11.36,
+   "pred": 10.34
+  },
+  {
+   "t": "04:40",
+   "actual": 11.62,
+   "pred": 10.49
+  },
+  {
+   "t": "05:10",
+   "actual": 10.18,
+   "pred": 9.4
+  },
+  {
+   "t": "05:40",
+   "actual": 11.86,
+   "pred": 10.54
+  },
+  {
+   "t": "06:10",
+   "actual": 12.23,
+   "pred": 10.77
+  },
+  {
+   "t": "06:40",
+   "actual": 11.97,
+   "pred": 10.65
+  },
+  {
+   "t": "07:10",
+   "actual": 12.28,
+   "pred": 10.82
+  },
+  {
+   "t": "07:40",
+   "actual": 11.39,
+   "pred": 10.31
+  },
+  {
+   "t": "08:10",
+   "actual": 11.49,
+   "pred": 10.42
+  },
+  {
+   "t": "08:40",
+   "actual": 11.51,
+   "pred": 10.28
+  },
+  {
+   "t": "09:10",
+   "actual": 10.2,
+   "pred": 9.5
+  },
+  {
+   "t": "09:40",
+   "actual": 9.84,
+   "pred": 9.38
+  },
+  {
+   "t": "10:10",
+   "actual": 12.04,
+   "pred": 10.65
+  },
+  {
+   "t": "10:40",
+   "actual": 12.16,
+   "pred": 10.79
+  },
+  {
+   "t": "11:10",
+   "actual": 12.16,
+   "pred": 10.76
+  },
+  {
+   "t": "11:40",
+   "actual": 11.82,
+   "pred": 10.57
+  },
+  {
+   "t": "12:10",
+   "actual": 11.8,
+   "pred": 10.81
+  },
+  {
+   "t": "12:40",
+   "actual": 12.26,
+   "pred": 10.78
+  },
+  {
+   "t": "13:10",
+   "actual": 12.16,
+   "pred": 10.77
+  },
+  {
+   "t": "13:40",
+   "actual": 11.76,
+   "pred": 10.7
+  },
+  {
+   "t": "14:10",
+   "actual": 11.11,
+   "pred": 10.0
+  },
+  {
+   "t": "14:40",
+   "actual": 11.38,
+   "pred": 10.34
+  },
+  {
+   "t": "15:10",
+   "actual": 11.44,
+   "pred": 10.27
+  },
+  {
+   "t": "15:40",
+   "actual": 10.76,
+   "pred": 9.96
+  },
+  {
+   "t": "16:10",
+   "actual": 10.46,
+   "pred": 9.43
+  },
+  {
+   "t": "16:40",
+   "actual": 11.39,
+   "pred": 10.22
+  },
+  {
+   "t": "17:10",
+   "actual": 12.22,
+   "pred": 10.78
+  },
+  {
+   "t": "17:40",
+   "actual": 11.96,
+   "pred": 10.59
+  },
+  {
+   "t": "18:10",
+   "actual": 12.03,
+   "pred": 10.74
+  },
+  {
+   "t": "18:40",
+   "actual": 12.12,
+   "pred": 10.89
+  },
+  {
+   "t": "19:10",
+   "actual": 12.18,
+   "pred": 10.87
+  },
+  {
+   "t": "19:40",
+   "actual": 12.14,
+   "pred": 10.86
+  },
+  {
+   "t": "20:10",
+   "actual": 12.1,
+   "pred": 10.82
+  },
+  {
+   "t": "20:40",
+   "actual": 12.15,
+   "pred": 10.83
+  },
+  {
+   "t": "21:10",
+   "actual": 12.16,
+   "pred": 10.77
+  },
+  {
+   "t": "21:40",
+   "actual": 12.13,
+   "pred": 10.85
+  },
+  {
+   "t": "22:10",
+   "actual": 12.16,
+   "pred": 10.9
+  },
+  {
+   "t": "22:40",
+   "actual": 12.13,
+   "pred": 10.75
+  },
+  {
+   "t": "23:10",
+   "actual": 11.72,
+   "pred": 10.76
+  },
+  {
+   "t": "23:40",
+   "actual": 6.94,
+   "pred": 6.6
+  }
+ ]
+}
