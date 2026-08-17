@@ -1,0 +1,8 @@
+Measuring Equipment;Name of the measured parameter;Units of the measured parameters ;Country;"Latitude (Decimal degrees)
+";"longitude (Decimal degrees)
+";Time Interval (min);Date of Installation (DD/MM/AAAA);First Timestamp (DD/MM/AAAA);Last Timestamp (DD/MM/AAAA);Azimuth (°);Tilt (°);Manufacturer;Model;Measurement Procedure
+;GHI;W/m2;Spain;4.60971;-74.08175;5 min;;2024-11-01;2024-11-30;;;;;
+;Front GPOA;W/m2;Spain;4.60971;-74.08175;5 min;;2024-11-01;2024-11-30;;;;;
+;Wind Speed;°;Spain;4.60971;-74.08175;5 min;;2024-11-01;2024-11-30;;;;;
+;Temperature ambient;°C;Spain;4.60971;-74.08175;5 min;;2024-11-01;2024-11-30;;;;;
+;Temperature Module PV;°C;Spain;4.60971;-74.08175;5 min;;2024-11-01;2024-11-30;;;;;
