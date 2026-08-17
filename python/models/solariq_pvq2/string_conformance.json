@@ -1,0 +1,70 @@
+{
+ "strings": [
+  {
+   "string": "inv1-s1",
+   "slope_A_per_Wm2": 0.005341,
+   "conf_test_%": 99.3,
+   "lost_test_kwh": 279.1,
+   "conf_full_%": 99.2,
+   "lost_full_kwh": 1370.0
+  },
+  {
+   "string": "inv1-s2",
+   "slope_A_per_Wm2": 0.005327,
+   "conf_test_%": 98.8,
+   "lost_test_kwh": 289.1,
+   "conf_full_%": 99.2,
+   "lost_full_kwh": 1328.7
+  },
+  {
+   "string": "inv1-s3",
+   "slope_A_per_Wm2": 0.004633,
+   "conf_test_%": 99.1,
+   "lost_test_kwh": 251.1,
+   "conf_full_%": 96.9,
+   "lost_full_kwh": 1704.1
+  },
+  {
+   "string": "inv2-s1",
+   "slope_A_per_Wm2": 0.005022,
+   "conf_test_%": 98.3,
+   "lost_test_kwh": 206.2,
+   "conf_full_%": 98.8,
+   "lost_full_kwh": 1178.9
+  },
+  {
+   "string": "inv2-s2",
+   "slope_A_per_Wm2": 0.004871,
+   "conf_test_%": 97.2,
+   "lost_test_kwh": 239.4,
+   "conf_full_%": 97.4,
+   "lost_full_kwh": 1394.6
+  },
+  {
+   "string": "inv2-s3",
+   "slope_A_per_Wm2": 0.005435,
+   "conf_test_%": 97.9,
+   "lost_test_kwh": 219.3,
+   "conf_full_%": 98.7,
+   "lost_full_kwh": 1212.1
+  },
+  {
+   "string": "inv3-s1",
+   "slope_A_per_Wm2": 0.005238,
+   "conf_test_%": 97.1,
+   "lost_test_kwh": 368.3,
+   "conf_full_%": 98.7,
+   "lost_full_kwh": 1493.0
+  },
+  {
+   "string": "inv3-s2",
+   "slope_A_per_Wm2": 0.00513,
+   "conf_test_%": 98.3,
+   "lost_test_kwh": 313.2,
+   "conf_full_%": 99.3,
+   "lost_full_kwh": 1291.3
+  }
+ ],
+ "method": "I = s*G fit on train; conformance = 100*sum(I_act)/sum(I_hat) on test",
+ "saved_by": "solariq_pvq2_analysis.ipynb"
+}

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Python ML workspace (notebooks, scripts, virtualenv — not app code):
+    "python/**",
   ]),
 ]);
 

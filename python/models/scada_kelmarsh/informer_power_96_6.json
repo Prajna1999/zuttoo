@@ -1,0 +1,48 @@
+{
+ "model": "informer_power_96_6",
+ "arch": "Informer",
+ "enc_in": 3,
+ "config": {
+  "d_model": 128,
+  "n_heads": 8,
+  "d_ff": 256,
+  "e_layers": 3,
+  "d_layers": 1,
+  "dropout": 0.1,
+  "factor": 5,
+  "seq_len": 96,
+  "label_len": 48,
+  "pred_len": 6,
+  "sparse": true
+ },
+ "channels": [
+  "P",
+  "ws",
+  "theo"
+ ],
+ "perfect_nwp_oracle": false,
+ "device": "mps",
+ "channel_sd": [
+  2.8585314750671387,
+  2.740145444869995,
+  3.242954969406128
+ ],
+ "channel_mean": [
+  2.848905563354492,
+  6.112415790557861,
+  3.4542760848999023
+ ],
+ "target": "farm power MW",
+ "capacity_mw": 12.3,
+ "val_mae_all": 0.719,
+ "test_mae_per_step": [
+  0.515,
+  0.686,
+  0.775,
+  0.852,
+  0.941,
+  0.991
+ ],
+ "test_mae_all": 0.793,
+ "saved_by": "kelmarsh_scada_analysis.ipynb"
+}

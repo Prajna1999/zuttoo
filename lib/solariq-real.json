@@ -1,0 +1,641 @@
+{
+ "source": "Area Science Park PV plant Q2 (Trieste) \u00b7 CC-BY-4.0 \u00b7 zenodo.org/records/7115550",
+ "plant": {
+  "name": "Area Science Park PV Q2",
+  "capacityKwp": 14.0,
+  "inverters": 3,
+  "strings": 8,
+  "location": "Basovizza campus, Trieste, Italy (45.64\u00b0N 13.85\u00b0E)"
+ },
+ "period": {
+  "from": "2013-01-01",
+  "to": "2021-11-16",
+  "points": 311232,
+  "resolution": "15 min"
+ },
+ "kpis": {
+  "performancePct": 98.5,
+  "targetPct": 95.0,
+  "dataIntegrityPct": 98.7,
+  "anomalousMwh": 4.9,
+  "faultStrings": 1,
+  "totalStrings": 8
+ },
+ "windowDate": "2021-06-16",
+ "inverters": [
+  {
+   "id": "INV-01",
+   "strings": [
+    {
+     "id": "S1",
+     "inverter": "INV-01",
+     "conf": 99.2,
+     "lostKwh": 1370.0
+    },
+    {
+     "id": "S2",
+     "inverter": "INV-01",
+     "conf": 99.2,
+     "lostKwh": 1329.0
+    },
+    {
+     "id": "S3",
+     "inverter": "INV-01",
+     "conf": 96.9,
+     "lostKwh": 1704.0
+    }
+   ],
+   "status": "warn",
+   "title": "INV-01 \u00b7 string 3 open-circuit event (2017)",
+   "cause": "String 3 current pinned at 0 for 654 h in 2017 (\u2248{str_fault['byYear'].get('2017', 0):.0f} h) while strings 1\u20132 tracked normally \u2014 DC fuse/connector open-circuit; since restored (test-window conformance 99.1%). Full-period conformance 96.9%.",
+   "action": "Restored in 2017; add string-current delta monitoring to catch recurrence."
+  },
+  {
+   "id": "INV-02",
+   "strings": [
+    {
+     "id": "S1",
+     "inverter": "INV-02",
+     "conf": 98.8,
+     "lostKwh": 1179.0
+    },
+    {
+     "id": "S2",
+     "inverter": "INV-02",
+     "conf": 97.4,
+     "lostKwh": 1395.0
+    },
+    {
+     "id": "S3",
+     "inverter": "INV-02",
+     "conf": 98.7,
+     "lostKwh": 1212.0
+    }
+   ],
+   "status": "crit",
+   "title": "INV-02 \u00b7 DC voltage channel fault (2021)",
+   "cause": "DC voltage reads 0 from 2021-05-28 to 2021-11-15 (973 h) while string currents track normally \u2014 a DAQ/voltage-channel fault, not an outage; \u22483.2 MWh of output is invisible in the V\u00d7I power record (the 2021 efficiency step-down).",
+   "action": "Verify the INV-02 DC-voltage transducer and wiring; re-integrate string-current-derived power into the record."
+  },
+  {
+   "id": "INV-03",
+   "strings": [
+    {
+     "id": "S1",
+     "inverter": "INV-03",
+     "conf": 98.7,
+     "lostKwh": 1493.0
+    },
+    {
+     "id": "S2",
+     "inverter": "INV-03",
+     "conf": 99.3,
+     "lostKwh": 1291.0
+    }
+   ],
+   "status": "healthy",
+   "title": "INV-03 \u00b7 within band",
+   "cause": "Strings S1, S2 track the plant relationship (worst-string conformance 98.7% over the full period).",
+   "action": "No action needed."
+  }
+ ],
+ "grid": [
+  [
+   99.2,
+   99.2,
+   96.9
+  ],
+  [
+   98.8,
+   97.4,
+   98.7
+  ],
+  [
+   98.7,
+   99.3
+  ]
+ ],
+ "generation": [
+  {
+   "t": "00:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "00:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "00:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "00:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "01:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "01:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "01:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "01:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "02:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "02:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "02:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "02:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "03:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "03:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "03:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "03:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "04:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "04:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "04:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "04:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "05:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "05:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "05:30",
+   "actual": 0.06,
+   "potential": 0.11
+  },
+  {
+   "t": "05:45",
+   "actual": 0.29,
+   "potential": 0.33
+  },
+  {
+   "t": "06:00",
+   "actual": 0.57,
+   "potential": 0.57
+  },
+  {
+   "t": "06:15",
+   "actual": 0.81,
+   "potential": 0.78
+  },
+  {
+   "t": "06:30",
+   "actual": 1.16,
+   "potential": 1.09
+  },
+  {
+   "t": "06:45",
+   "actual": 1.64,
+   "potential": 1.47
+  },
+  {
+   "t": "07:00",
+   "actual": 2.06,
+   "potential": 1.77
+  },
+  {
+   "t": "07:15",
+   "actual": 2.31,
+   "potential": 1.95
+  },
+  {
+   "t": "07:30",
+   "actual": 3.25,
+   "potential": 2.75
+  },
+  {
+   "t": "07:45",
+   "actual": 2.82,
+   "potential": 3.13
+  },
+  {
+   "t": "08:00",
+   "actual": 1.61,
+   "potential": 2.27
+  },
+  {
+   "t": "08:15",
+   "actual": 1.81,
+   "potential": 2.51
+  },
+  {
+   "t": "08:30",
+   "actual": 2.79,
+   "potential": 3.68
+  },
+  {
+   "t": "08:45",
+   "actual": 4.15,
+   "potential": 5.34
+  },
+  {
+   "t": "09:00",
+   "actual": 5.52,
+   "potential": 6.86
+  },
+  {
+   "t": "09:15",
+   "actual": 5.49,
+   "potential": 7.23
+  },
+  {
+   "t": "09:30",
+   "actual": 5.79,
+   "potential": 7.65
+  },
+  {
+   "t": "09:45",
+   "actual": 4.78,
+   "potential": 6.34
+  },
+  {
+   "t": "10:00",
+   "actual": 6.22,
+   "potential": 8.3
+  },
+  {
+   "t": "10:15",
+   "actual": 5.96,
+   "potential": 8.08
+  },
+  {
+   "t": "10:30",
+   "actual": 6.61,
+   "potential": 9.12
+  },
+  {
+   "t": "10:45",
+   "actual": 6.84,
+   "potential": 9.58
+  },
+  {
+   "t": "11:00",
+   "actual": 7.12,
+   "potential": 10.13
+  },
+  {
+   "t": "11:15",
+   "actual": 7.37,
+   "potential": 10.64
+  },
+  {
+   "t": "11:30",
+   "actual": 7.55,
+   "potential": 11.07
+  },
+  {
+   "t": "11:45",
+   "actual": 7.68,
+   "potential": 11.44
+  },
+  {
+   "t": "12:00",
+   "actual": 7.85,
+   "potential": 11.82
+  },
+  {
+   "t": "12:15",
+   "actual": 7.95,
+   "potential": 12.11
+  },
+  {
+   "t": "12:30",
+   "actual": 8.09,
+   "potential": 12.4
+  },
+  {
+   "t": "12:45",
+   "actual": 8.13,
+   "potential": 12.56
+  },
+  {
+   "t": "13:00",
+   "actual": 8.16,
+   "potential": 12.71
+  },
+  {
+   "t": "13:15",
+   "actual": 8.25,
+   "potential": 12.9
+  },
+  {
+   "t": "13:30",
+   "actual": 8.23,
+   "potential": 13.01
+  },
+  {
+   "t": "13:45",
+   "actual": 7.93,
+   "potential": 12.68
+  },
+  {
+   "t": "14:00",
+   "actual": 8.04,
+   "potential": 12.92
+  },
+  {
+   "t": "14:15",
+   "actual": 8.0,
+   "potential": 13.03
+  },
+  {
+   "t": "14:30",
+   "actual": 7.9,
+   "potential": 12.96
+  },
+  {
+   "t": "14:45",
+   "actual": 7.78,
+   "potential": 12.86
+  },
+  {
+   "t": "15:00",
+   "actual": 7.59,
+   "potential": 12.64
+  },
+  {
+   "t": "15:15",
+   "actual": 7.38,
+   "potential": 12.42
+  },
+  {
+   "t": "15:30",
+   "actual": 7.14,
+   "potential": 12.09
+  },
+  {
+   "t": "15:45",
+   "actual": 6.91,
+   "potential": 11.78
+  },
+  {
+   "t": "16:00",
+   "actual": 6.66,
+   "potential": 11.41
+  },
+  {
+   "t": "16:15",
+   "actual": 6.37,
+   "potential": 10.98
+  },
+  {
+   "t": "16:30",
+   "actual": 6.02,
+   "potential": 10.5
+  },
+  {
+   "t": "16:45",
+   "actual": 5.69,
+   "potential": 10.03
+  },
+  {
+   "t": "17:00",
+   "actual": 5.33,
+   "potential": 9.49
+  },
+  {
+   "t": "17:15",
+   "actual": 4.98,
+   "potential": 8.96
+  },
+  {
+   "t": "17:30",
+   "actual": 4.53,
+   "potential": 8.26
+  },
+  {
+   "t": "17:45",
+   "actual": 4.21,
+   "potential": 7.78
+  },
+  {
+   "t": "18:00",
+   "actual": 3.33,
+   "potential": 6.25
+  },
+  {
+   "t": "18:15",
+   "actual": 3.38,
+   "potential": 6.55
+  },
+  {
+   "t": "18:30",
+   "actual": 2.73,
+   "potential": 5.53
+  },
+  {
+   "t": "18:45",
+   "actual": 2.25,
+   "potential": 4.74
+  },
+  {
+   "t": "19:00",
+   "actual": 1.84,
+   "potential": 4.09
+  },
+  {
+   "t": "19:15",
+   "actual": 1.4,
+   "potential": 3.32
+  },
+  {
+   "t": "19:30",
+   "actual": 0.97,
+   "potential": 2.59
+  },
+  {
+   "t": "19:45",
+   "actual": 0.59,
+   "potential": 1.86
+  },
+  {
+   "t": "20:00",
+   "actual": 0.35,
+   "potential": 1.22
+  },
+  {
+   "t": "20:15",
+   "actual": 0.17,
+   "potential": 0.66
+  },
+  {
+   "t": "20:30",
+   "actual": 0.04,
+   "potential": 0.19
+  },
+  {
+   "t": "20:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "21:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "21:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "21:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "21:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "22:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "22:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "22:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "22:45",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "23:00",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "23:15",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "23:30",
+   "actual": 0.0,
+   "potential": 0.0
+  },
+  {
+   "t": "23:45",
+   "actual": 0.0,
+   "potential": 0.0
+  }
+ ],
+ "losses": [
+  {
+   "name": "String-level deficit",
+   "mwh": 9.3
+  },
+  {
+   "name": "Voltage-channel fault (2021)",
+   "mwh": 3.2
+  },
+  {
+   "name": "String open-circuit (2017)",
+   "mwh": 1.7
+  }
+ ],
+ "findings": {
+  "voltageChannelFault": {
+   "inverter": "INV-02",
+   "hours": 973.0,
+   "from": "2021-05-28",
+   "to": "2021-11-15",
+   "invisibleKwh": 3218.0,
+   "byYear": {
+    "2021": 973.0
+   }
+  },
+  "stringOpenCircuit": {
+   "string": "S3",
+   "inverter": "INV-01",
+   "hours": 654.0,
+   "byYear": {
+    "2013": 18.0,
+    "2016": 2.0,
+    "2017": 634.0,
+    "2021": 0.0
+   }
+  },
+  "efficiencyModel": {
+   "coef_G": 0.01346633696722671,
+   "coef_GxT": -1.0771466731847434e-05
+  }
+ }
+}

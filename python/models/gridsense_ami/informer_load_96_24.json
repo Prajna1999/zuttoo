@@ -1,0 +1,62 @@
+{
+ "model": "informer_load_96_24",
+ "arch": "Informer",
+ "enc_in": 2,
+ "config": {
+  "d_model": 128,
+  "n_heads": 8,
+  "d_ff": 256,
+  "e_layers": 3,
+  "d_layers": 1,
+  "dropout": 0.1,
+  "factor": 5,
+  "seq_len": 96,
+  "label_len": 48,
+  "pred_len": 24,
+  "sparse": true
+ },
+ "channels": [
+  "P_div_MW",
+  "T_ballpark_C"
+ ],
+ "device": "mps",
+ "channel_sd": [
+  320.19598388671875,
+  4.984421730041504
+ ],
+ "channel_mean": [
+  819.4055786132812,
+  16.90508270263672
+ ],
+ "target": "division load MW",
+ "peak_mw": 1790.589,
+ "val_mae_all": 75.32,
+ "test_mae_per_step": [
+  138.585,
+  108.723,
+  72.488,
+  62.526,
+  83.93,
+  130.707,
+  146.65,
+  110.517,
+  106.526,
+  116.721,
+  94.84,
+  62.623,
+  66.266,
+  91.421,
+  126.771,
+  149.18,
+  130.242,
+  96.372,
+  94.778,
+  111.291,
+  92.301,
+  102.195,
+  134.252,
+  148.803
+ ],
+ "test_mae_all": 107.446,
+ "saved_by": "gridsense_ami_analysis.ipynb"
+}

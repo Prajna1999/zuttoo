@@ -1,0 +1,48 @@
+{
+ "model": "informer_power_96_6",
+ "arch": "Informer",
+ "enc_in": 3,
+ "config": {
+  "d_model": 128,
+  "n_heads": 8,
+  "d_ff": 256,
+  "e_layers": 3,
+  "d_layers": 1,
+  "dropout": 0.1,
+  "factor": 5,
+  "seq_len": 96,
+  "label_len": 48,
+  "pred_len": 6,
+  "sparse": true
+ },
+ "channels": [
+  "P",
+  "G",
+  "T"
+ ],
+ "perfect_irradiance_oracle": false,
+ "device": "mps",
+ "channel_sd": [
+  3.5514798164367676,
+  265.0864562988281,
+  9.774164199829102
+ ],
+ "channel_mean": [
+  2.1042215824127197,
+  159.3352508544922,
+  13.21076488494873
+ ],
+ "target": "plant DC power kW",
+ "capacity_kwp_999pct": 13.95,
+ "val_mae_all": 0.649,
+ "test_mae_per_step": [
+  0.502,
+  0.554,
+  0.641,
+  0.734,
+  0.834,
+  0.923
+ ],
+ "test_mae_all": 0.698,
+ "saved_by": "solariq_pvq2_analysis.ipynb"
+}
