@@ -1,4 +1,5 @@
 import type { PRODUCTS } from "@/lib/design-system";
+import { REAL_DATA_PRODUCTS } from "@/lib/design-system";
 
 type ProductId = (typeof PRODUCTS)[number]["id"];
 
@@ -50,3 +51,13 @@ export const MARKETING_COPY: Record<ProductId, { tagline: string; blurb: string;
     ],
   },
 };
+
+// One-line "what the live demo is running on" per product (real datasets only).
+export const REAL_STATS: Partial<Record<ProductId, string>> = {
+  assetiq: "100 turbofan engines · 21 sensors · NASA C-MAPSS FD001 run-to-failure archive",
+  windiq: "6 × 2.05 MW Senvion MM92 · real Kelmarsh wind-farm SCADA (2016)",
+  solariq: "14 kWp · 3 inverters · 8 strings · real Area Science Park SCADA (2013–21)",
+  gridsense: "321 smart meters · hourly AMI · ECL distribution network (2012–14)",
+};
+export const isRealDataProduct = (id: string) =>
+  (REAL_DATA_PRODUCTS as readonly string[]).includes(id);

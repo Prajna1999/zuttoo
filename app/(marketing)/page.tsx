@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRODUCTS } from "@/lib/design-system";
-import { MARKETING_COPY, SITE_URL } from "@/lib/marketing-data";
+import { MARKETING_COPY, REAL_STATS, SITE_URL, isRealDataProduct } from "@/lib/marketing-data";
 import { ProductIconTile, PRODUCT_HUES } from "@/components/marketing/product-icons";
 import { ConsoleScreenshot } from "@/components/marketing/console-screenshot";
 
@@ -95,7 +95,7 @@ export default function Home() {
             <div className="mk-rise min-w-0" style={{ animationDelay: "200ms" }}>
               <ConsoleScreenshot id="assetiq" />
               <p className="mt-3 text-center text-xs text-mk-ink-faint">
-                AssetIQ console · live in this demo environment
+                AssetIQ console · live demo on real NASA C-MAPSS fleet data
               </p>
             </div>
           </div>
@@ -112,7 +112,12 @@ export default function Home() {
               >
                 <ProductIconTile id={p.id} size={34} />
                 <div>
-                  <div className="font-display text-sm font-bold tracking-tight">{p.name}</div>
+                  <div className="flex items-center gap-1.5 font-display text-sm font-bold tracking-tight">
+                    {p.name}
+                    {isRealDataProduct(p.id) && (
+                      <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#3FD0C9" }} />
+                    )}
+                  </div>
                   <div className="mt-0.5 text-xs leading-snug text-mk-ink-dim">{HERO_ONELINERS[p.id]}</div>
                 </div>
               </Link>
@@ -142,9 +147,31 @@ export default function Home() {
                   View product →
                 </span>
               </div>
-              <div className="mt-5 font-display text-2xl font-bold tracking-tight">{p.name}</div>
+              <div className="mt-5 flex flex-wrap items-center gap-2.5">
+                <span className="font-display text-2xl font-bold tracking-tight">{p.name}</span>
+                {isRealDataProduct(p.id) ? (
+                  <span
+                    className="rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide"
+                    style={{ color: "#3FD0C9", background: "color-mix(in srgb, #3FD0C9 12%, transparent)" }}
+                  >
+                    REAL DATA
+                  </span>
+                ) : (
+                  <span
+                    className="rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide"
+                    style={{ color: "var(--mk-ink-faint, #8b98a5)", background: "rgba(139,152,165,0.12)" }}
+                  >
+                    SIMULATED
+                  </span>
+                )}
+              </div>
               <div className="mt-0.5 text-xs font-medium uppercase tracking-wide text-mk-ink-faint">{p.sub}</div>
               <p className="mt-3 leading-relaxed text-mk-ink-dim">{MARKETING_COPY[p.id].tagline}</p>
+              {REAL_STATS[p.id] && (
+                <p className="mt-2.5 font-mono text-[11px] leading-relaxed" style={{ color: PRODUCT_HUES[p.id] }}>
+                  {REAL_STATS[p.id]}
+                </p>
+              )}
             </Link>
           ))}
         </div>

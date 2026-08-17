@@ -1,0 +1,33 @@
+{
+ "dataset": "Kelmarsh SCADA 2016 (zenodo 5841834)",
+ "target": "farm power MW",
+ "split": "70/10/20 temporal",
+ "features": [
+  "P_l0",
+  "P_l1",
+  "P_l6",
+  "P_l36",
+  "P_l144",
+  "ws_l0",
+  "ws_l1",
+  "ws_l6",
+  "ws_l36",
+  "ws_l144",
+  "theo_l0",
+  "theo_l1",
+  "theo_l6",
+  "theo_l36",
+  "theo_l144",
+  "hour_sin",
+  "hour_cos",
+  "doy_sin",
+  "doy_cos"
+ ],
+ "test_mae_mw": {
+  "h1h": 0.969,
+  "h6h": 1.847,
+  "h24h": 2.407
+ },
+ "capacity_mw": 12.3,
+ "saved_by": "kelmarsh_scada_analysis.ipynb"
+}

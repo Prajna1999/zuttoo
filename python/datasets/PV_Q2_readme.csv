@@ -1,0 +1,30 @@
+Version_001
+Readme version description:this readme refers to the contents of the dataset named AREA_SCIENCE_PARK_PV_Q2.
+Files present in the dataset named AREA_SCIENCE_PARK_PV_Q2 are:
+
+1.PV_Q2.csv: this CSV (comma separated value_utf-8) file contains DC side photovoltaic (PV) system parameters measured in real operating conditions from the 1st January 2013 to the 16th November 2021. The PV plant is installed over the Q2 building, placed in the Basovizza campus of Area Science Park in Triest (Italy). The geographical coordinates of the PV field are: 45.64413722052132 - 13.850041741818321. Each line of the file is related to a 15 minutes period.
+
+2.PV_Q2_description.pdf
+
+PV_Q2.csv file columns description table:
+column_name,type,unit_of_measure,short_description
+date,text string,-,date of the acquisition of the data (yyyymmdd)
+time,text string,-,hour expressed in hours:minutes:seconds of the acquisition of the data - 15 minutes average (hh:mm:ss)
+inv1_str1_curr,float64,ampere,dc string current
+inv1_str2_curr,float64,ampere,dc string current
+inv1_str3_curr,float64,ampere,dc string current
+inv1_volt,float64,volt,dc tension of the first inverter to which are connected strings 1-2-3 in parallel
+inv1_tpan,float64,celsius degree,back side of panel temperature of one panel in the middle of one string connected to inverter 1
+inv2_str1_curr,float64,ampere,dc string current
+inv2_str2_curr,float64,ampere,dc string current
+inv2_str3_curr,float64,ampere,dc string current
+inv2_volt,float64,volt,dc tension of the second inverter to which are connected strings 4-5-6 in parallel
+inv2_tpan,float64,celsius degree,back side of panel temperature of one panel in the middle of one string connected to inverter 2
+inv3_str1_curr,float64,ampere,dc string current
+inv3_str2_curr,float64,ampere,dc string current
+inv3_volt,float64,volt,dc tension of the third inverter to which are connected strings 7-8 in parallel
+inv3_tpan,float64,celsius degree,back side of panel temperature of one panel in the middle of one string connected to inverter 3
+irradiance,float64,watt/m^2,solar irradince measured in the plane of the panels
+tamb,float64,celsius degree,ambient temperature
+
+Description about the measurement equipment can be found in the file PV_Q2_description.pdf.

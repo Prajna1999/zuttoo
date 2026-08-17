@@ -1,0 +1,33 @@
+{
+ "dataset": "Area Science Park PV Q2 (zenodo 7115550)",
+ "target": "plant DC power kW",
+ "split": "70/10/20 temporal",
+ "capacity_kwp_999pct": 13.95,
+ "features": [
+  "P_l0",
+  "P_l1",
+  "P_l4",
+  "P_l24",
+  "P_l96",
+  "G_l0",
+  "G_l1",
+  "G_l4",
+  "G_l24",
+  "G_l96",
+  "T_l0",
+  "T_l1",
+  "T_l4",
+  "T_l24",
+  "T_l96",
+  "hour_sin",
+  "hour_cos",
+  "doy_sin",
+  "doy_cos"
+ ],
+ "test_mae_kw": {
+  "h1h": 0.845,
+  "h6h": 1.717,
+  "h24h": 1.062
+ },
+ "saved_by": "solariq_pvq2_analysis.ipynb"
+}

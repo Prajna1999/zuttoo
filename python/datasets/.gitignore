@@ -1,0 +1,10 @@
+# Raw Kelmarsh SCADA 2016 (zenodo.org/records/5841834) — ~620 MB extracted.
+# Regenerable: download Kelmarsh_SCADA_2016_3082.zip and unzip into kelmarsh_2016/.
+kelmarsh_2016/
+kelmarsh_2016.zip
+
+# ECL smart-meter network (UCI ElectricityLoadDiagrams20112014 via laiguokun mirror).
+ecl_electricity.txt
+
+# NASA C-MAPSS FD001 turbofan degradation (HF gabrieleformis/cmapss-dataset mirror).
+cmapss_fd001/

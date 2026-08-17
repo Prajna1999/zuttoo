@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PRODUCTS } from "@/lib/design-system";
-import { MARKETING_COPY, SITE_URL } from "@/lib/marketing-data";
+import { MARKETING_COPY, REAL_STATS, SITE_URL, isRealDataProduct } from "@/lib/marketing-data";
 import { ProductIconTile, PRODUCT_HUES } from "@/components/marketing/product-icons";
 import { ConsoleScreenshot } from "@/components/marketing/console-screenshot";
 
@@ -72,12 +72,32 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: hue }}>
               {product.sub}
             </span>
+            {isRealDataProduct(product.id) ? (
+              <span
+                className="rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide"
+                style={{ color: "#3FD0C9", background: "color-mix(in srgb, #3FD0C9 12%, transparent)" }}
+              >
+                REAL DATA
+              </span>
+            ) : (
+              <span
+                className="rounded-full px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide"
+                style={{ color: "var(--mk-ink-faint, #8b98a5)", background: "rgba(139,152,165,0.12)" }}
+              >
+                SIMULATED
+              </span>
+            )}
           </div>
           <h1 className="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">{product.name}</h1>
           <p className="mt-4 max-w-xl font-display text-xl font-medium leading-snug text-mk-ink sm:text-2xl">
             {copy.tagline}
           </p>
           <p className="mt-4 max-w-xl leading-relaxed text-mk-ink-dim">{copy.blurb}</p>
+          {REAL_STATS[product.id] && (
+            <p className="mt-3 font-mono text-xs" style={{ color: hue }}>
+              Live demo powered by real data: {REAL_STATS[product.id]}
+            </p>
+          )}
 
           <div className="mt-9 space-y-3">
             {copy.features.map((f) => (
@@ -114,7 +134,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <div className="min-w-0 self-start lg:sticky lg:top-24">
           <ConsoleScreenshot id={product.id} />
           <p className="mt-3 text-center text-xs text-mk-ink-faint">
-            Interactive console · live in this demo environment
+            {isRealDataProduct(product.id)
+              ? "Interactive console · live demo on real operational data"
+              : "Interactive console · live in this demo environment"}
           </p>
         </div>
       </div>

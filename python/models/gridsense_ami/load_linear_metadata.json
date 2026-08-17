@@ -1,0 +1,20 @@
+{
+ "dataset": "ECL smart-meter network (UCI ElectricityLoadDiagrams20112014)",
+ "target": "division load MW",
+ "split": "70/10/20 temporal",
+ "features": [
+  "P_l1",
+  "P_l24",
+  "P_l168",
+  "hour_sin/cos",
+  "doy_sin/cos",
+  "T_t",
+  "T_tph"
+ ],
+ "test_mae_mw": {
+  "h24": 40.04,
+  "h168": 54.86
+ },
+ "peak_mw": 1790.589,
+ "saved_by": "gridsense_ami_analysis.ipynb"
+}

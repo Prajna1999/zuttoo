@@ -23,6 +23,11 @@ export const PRODUCTS = [
   { id: "windiq", name: "WindIQ", sub: "Wind Performance AI", icon: "💨" },
 ] as const;
 
+// Products whose demo consoles run on real open datasets (see python/ notebooks).
+export const REAL_DATA_PRODUCTS = ["assetiq", "gridsense", "solariq", "windiq"] as const;
+export const isRealDataProduct = (id: string) =>
+  (REAL_DATA_PRODUCTS as readonly string[]).includes(id);
+
 export const TOOLTIP_STYLE = {
   background: COLORS.panelSoft,
   border: `1px solid ${COLORS.line}`,

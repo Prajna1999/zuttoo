@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { COLORS, PRODUCTS } from "@/lib/design-system";
+import { COLORS, PRODUCTS, isRealDataProduct } from "@/lib/design-system";
 import { FieldMatePanel } from "@/components/fieldmate-panel";
 
 export function Shell({ children }: { children: React.ReactNode }) {
@@ -46,6 +46,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <div className="flex-1 px-1.5 py-1">
           {PRODUCTS.map((p) => {
             const active = p.id === activeId;
+            const real = isRealDataProduct(p.id);
             return (
               <Link
                 key={p.id}
@@ -56,9 +57,16 @@ export function Shell({ children }: { children: React.ReactNode }) {
               >
                 <span className="flex-shrink-0 text-lg">{p.icon}</span>
                 {navOpen && (
-                  <div>
-                    <div className="whitespace-nowrap text-[12.5px] font-semibold">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-1.5 whitespace-nowrap text-[12.5px] font-semibold">
                       {p.name}
+                      {real && (
+                        <span
+                          title="Real data"
+                          className="inline-block h-1.5 w-1.5 rounded-full"
+                          style={{ background: COLORS.healthy }}
+                        />
+                      )}
                     </div>
                     <div className="whitespace-nowrap text-[10px] text-faint">
                       {p.sub}
@@ -71,7 +79,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </div>
         {navOpen && (
           <div className="border-t border-line px-3.5 py-3 text-[10px] leading-relaxed text-faint">
-            Demo suite · simulated data
+            Demo suite · real data
+            <br />
+            WindIQ · SolarIQ · GridSense · AssetIQ
             <br />
             Zuttoo Technologies
           </div>
@@ -95,6 +105,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
               >
                 DEMO
               </span>
+              {product && isRealDataProduct(product.id) && (
+                <span
+                  className="rounded font-mono text-[10px] font-semibold"
+                  style={{ color: COLORS.bg, background: COLORS.trace, padding: "2px 7px" }}
+                >
+                  REAL DATA
+                </span>
+              )}
             </div>
             <button
               onClick={() => setCopilotOpen(true)}
